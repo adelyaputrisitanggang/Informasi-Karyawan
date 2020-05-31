@@ -1,9 +1,7 @@
 <?php
 session_start();
 include_once('functions.php');
-if (!isset($_SESSION['is_logged_in'])) {
-    redirect('login.php');
-}
+
 open_page('Tambah Karyawan');
 ?>
 <form action="add_karyawan_process.php" method="post">

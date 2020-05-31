@@ -51,6 +51,11 @@ $employee_result_set = $database->query($employee_query);
         $department_result_set = $database->query($department_query);
         $department_row = mysqli_fetch_row($department_result_set);
 
+
+        $company_query = "SELECT * FROM company WHERE id_company=" . $employee_row['id_company'];
+        $company_result_set = $database->query($company_query);
+        $company_row = mysqli_fetch_row($company_result_set);
+
         echo ('<tr>');
         echo ('<td>' .
             $employee_row['id_emp'] . '</td>');
@@ -58,7 +63,8 @@ $employee_result_set = $database->query($employee_query);
         echo ('<td>' . $employee_row['title'] . '</td>');
         echo ('<td>' . $employee_row['salary'] . '</td>');
         echo ('<td>' . $department_row[1] . '</td>');
-        echo ('<td>' . $employee_row['id_company'] . '</td>');
+        echo ('<td>' . $company_row[1] . '</td>');
+
         echo ('<td colspan=2> <a href="detail.php?id='
             . $employee_row['id_emp'] . '">Detail Karyawan' . '</td>');
         echo ('</tr>');

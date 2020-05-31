@@ -28,11 +28,7 @@ $employee_result_set = $database->query($employee_query);
 
 <center>
     <h1>Daftar Karyawan</h1>
-    <?php if (get_session('user') == 'admin') { ?>
-        <a href="add_karyawan.php" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true">Tambah karyawan</a>
-        <br />
-    <?php } ?>
-
+   
     <br />
     <div class="container">
         <table class="table">
